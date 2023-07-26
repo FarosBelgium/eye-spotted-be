@@ -20,11 +20,11 @@ import java.io.IOException;
 public class EyeSpottedAuthenticationFilter extends OncePerRequestFilter {
 
     private final SecurityContextHolderStrategy securityContextHolderStrategy = SecurityContextHolder
-        .getContextHolderStrategy();
+            .getContextHolderStrategy();
 
     private final SecurityContextRepository securityContextRepository = new RequestAttributeSecurityContextRepository();
 
-   private final EyeSpottedAuthenticationTokenFactory authenticationTokenFactory;
+    private final EyeSpottedAuthenticationTokenFactory authenticationTokenFactory;
 
     public EyeSpottedAuthenticationFilter(EyeSpottedAuthenticationTokenFactory authenticationTokenFactory) {
         this.authenticationTokenFactory = authenticationTokenFactory;
@@ -33,7 +33,7 @@ public class EyeSpottedAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         Authentication authentication = authenticationTokenFactory.create(request);
 
         try {
@@ -50,6 +50,7 @@ public class EyeSpottedAuthenticationFilter extends OncePerRequestFilter {
             this.securityContextHolderStrategy.clearContext();
             this.logger.trace("Failed to process authentication request", failed);
         }
+
         filterChain.doFilter(request, response);
     }
 }
