@@ -30,18 +30,17 @@ CREATE TABLE Tag (
 
 CREATE TABLE Animal (
                         id BIGSERIAL  NOT NULL,
-                        name CHARACTER VARYING(255)  NOT NULL,
                         categoryid BIGINT  NOT NULL,
                         imageData bytea,
                         CONSTRAINT PK_Animal PRIMARY KEY (id)
 );
 
 CREATE TABLE AnimalLocalization (
-                        id BIGSERIAL  NOT NULL,
-                        animalid BIGSERIAL  NOT NULL,
-                        locale CHARACTER VARYING(10)  NOT NULL,
-                        localization CHARACTER VARYING(255)  NOT NULL,
-                        CONSTRAINT PK_AnimalLocalization PRIMARY KEY (id)
+                                    id BIGSERIAL  NOT NULL,
+                                    animalid BIGSERIAL  NOT NULL,
+                                    locale CHARACTER VARYING(10)  NOT NULL,
+                                    localization CHARACTER VARYING(255)  NOT NULL,
+                                    CONSTRAINT PK_AnimalLocalization PRIMARY KEY (id)
 );
 
 CREATE TABLE ExpeditionTarget (
@@ -61,7 +60,8 @@ CREATE TABLE AnimalTag (
 
 CREATE TABLE Sighting (
                           id BIGSERIAL  NOT NULL,
-                          location CHARACTER VARYING(4000)  NOT NULL,
+                          longitude CHARACTER VARYING(4000) ,
+                          latitude CHARACTER VARYING(4000) ,
                           creationtime TIMESTAMP NOT NULL,
                           expeditiontargetid BIGINT  NOT NULL,
                           CONSTRAINT PK_Sighting PRIMARY KEY (id)
@@ -69,7 +69,6 @@ CREATE TABLE Sighting (
 
 ALTER TABLE Expedition ADD CONSTRAINT User_Expedition
     FOREIGN KEY (userid) REFERENCES EyeUser (id);
-
 ALTER TABLE AnimalLocalization ADD CONSTRAINT Animal_Localization
     FOREIGN KEY (animalid) REFERENCES Animal (id);
 ALTER TABLE Sighting ADD CONSTRAINT ExpeditionTarget_Sighting
