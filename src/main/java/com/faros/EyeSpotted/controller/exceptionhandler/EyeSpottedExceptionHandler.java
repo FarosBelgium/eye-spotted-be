@@ -2,7 +2,6 @@ package com.faros.EyeSpotted.controller.exceptionhandler;
 
 import com.faros.EyeSpotted.exception.ValidationException;
 import com.faros.EyeSpotted.exception.error.EyeSpottedError;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
