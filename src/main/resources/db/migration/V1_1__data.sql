@@ -339,13 +339,17 @@ INSERT INTO ANIMALTAG(ANIMALID,TAGID) VALUES(60,7);
 
 INSERT INTO EYEUSER (id,username,EMAIL,PASSWORD,ROLE) VALUES(1, 'Admin', 'admin@HTF.be','admin','Admin');
 INSERT INTO EYEUSER (id,username,EMAIL,PASSWORD,ROLE) VALUES(2, 'user', 'user@HTF.be','user','');
+INSERT INTO EYEUSER (id,username,EMAIL,PASSWORD,ROLE) VALUES(3, 'SteveIrwin','S.Irwin@HTF.be','sIrwin','');
 
 
 INSERT INTO EXPEDITION(NAME,STARTDATE,USERID) VALUES('trip to Afrika',CURRENT_TIMESTAMP,1);
 INSERT INTO EXPEDITION(NAME,STARTDATE,enddate,USERID) VALUES('zooTrip','yesterday'::TIMESTAMP,current_timestamp,1);
 INSERT INTO EXPEDITION(NAME,STARTDATE,USERID) VALUES('test',CURRENT_TIMESTAMP,1);
 INSERT INTO EXPEDITION(NAME,STARTDATE,USERID) VALUES('trip to Asia',CURRENT_TIMESTAMP,2);
-INSERT INTO EXPEDITION(NAME,STARTDATE,USERID) VALUES('Hawk',CURRENT_TIMESTAMP,2);
+INSERT INTO EXPEDITION(NAME,STARTDATE,enddate,USERID) VALUES('Hawk','yesterday'::TIMESTAMP,CURRENT_TIMESTAMP,2);
+INSERT INTO EXPEDITION(NAME,STARTDATE,enddate,USERID) VALUES('African trip','yesterday'::TIMESTAMP,CURRENT_TIMESTAMP,3);
+INSERT INTO EXPEDITION(NAME,STARTDATE,USERID) VALUES('an expedition to the zoo',CURRENT_TIMESTAMP,3);
+INSERT INTO EXPEDITION(NAME,STARTDATE,USERID) VALUES('Trip in Europe',CURRENT_TIMESTAMP,3);
 
 INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (1,1);
 INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (2,1);
@@ -367,6 +371,38 @@ INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (18,4);
 INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (1,4);
 INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (3,4);
 INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (6,5);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (1,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (2,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (3,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (4,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (5,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (6,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (8,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (23,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (24,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (25,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (26,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (30,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (32,6);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (12,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (16,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (17,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (18,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (27,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (28,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (29,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (30,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (48,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (50,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (51,7);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (2,8);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (3,8);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (18,8);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (22,8);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (23,8);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (24,8);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (33,8);
+INSERT INTO expeditiontarget(animalid, expeditionid) VALUES (34,8);
 
 INSERT INTO sighting(longitude,latitude,creationtime, expeditiontargetid) VALUES (null,null,CURRENT_TIMESTAMP,1);
 INSERT INTO sighting(longitude,latitude,creationtime, expeditiontargetid) VALUES (null,null,CURRENT_TIMESTAMP,1);
